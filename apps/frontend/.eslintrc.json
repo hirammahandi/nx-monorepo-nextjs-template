@@ -1,0 +1,80 @@
+{
+  "extends": [
+    "plugin:@nrwl/nx/react-typescript",
+    "next",
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "../../.eslintrc.json"
+  ],
+  "ignorePatterns": ["!**/*", ".next/**/*"],
+
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": ["apps/frontend/tsconfig(.*)?.json"]
+      },
+      "plugins": ["react", "@typescript-eslint", "prettier"],
+      "rules": {
+        "@next/next/no-html-link-for-pages": [
+          "error",
+          "apps/frontend/src/pages"
+        ],
+        "quotes": ["error", "double", { "avoidEscape": true }],
+        "@typescript-eslint/quotes": [
+          "error",
+          "double",
+          { "avoidEscape": true }
+        ],
+        "react/jsx-use-react": ["off"],
+        "react/react-in-jsx-scope": ["off"],
+        "react/jsx-props-no-spreading": [
+          "warn",
+          {
+            "html": "ignore",
+            "exceptions": ["Component"]
+          }
+        ],
+        "no-shadow": "error",
+        "camelcase": ["warn"],
+        "spaced-comment": "error",
+        "no-console": "warn",
+        "no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off"
+  },
+  "env": {
+    "jest": true
+  }
+}
