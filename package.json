@@ -5,10 +5,11 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "prepare": "husky install",
     "test": "nx test",
     "lint": "nx run lint",
     "lint:fix": "nx run lint --fix",
-    "prepare": "husky install"
+    "storybook": "nx run frontend:storybook"
   },
   "private": true,
   "devDependencies": {

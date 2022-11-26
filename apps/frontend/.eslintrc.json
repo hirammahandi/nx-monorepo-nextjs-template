@@ -21,7 +21,10 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": ["apps/frontend/tsconfig(.*)?.json"]
+        "project": [
+          "apps/frontend/tsconfig(.*)?.json",
+          "apps/frontend/.storybook/tsconfig.json"
+        ]
       },
       "plugins": ["react", "@typescript-eslint", "prettier"],
       "rules": {
@@ -38,10 +41,9 @@
         "react/jsx-use-react": ["off"],
         "react/react-in-jsx-scope": ["off"],
         "react/jsx-props-no-spreading": [
-          "warn",
+          "off",
           {
-            "html": "ignore",
-            "exceptions": ["Component"]
+            "html": "ignore"
           }
         ],
         "no-shadow": "error",
@@ -59,7 +61,16 @@
           {
             "argsIgnorePattern": "^_"
           }
-        ]
+        ],
+        "no-param-reassign": "off",
+        "@typescript-eslint/no-param-reassign": "off",
+        "import/no-import-module-exports": [
+          "off",
+          {
+            "exceptions": ["./.storybook/main.ts"]
+          }
+        ],
+        "react/function-component-definition": "off"
       }
     },
     {

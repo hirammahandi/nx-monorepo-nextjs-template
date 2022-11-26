@@ -17,12 +17,13 @@
     "../**/*.spec.jsx"
   ],
   "include": [
-    "../components/**/*.stories.ts",
-    "../components/**/*.stories.js",
-    "../components/**/*.stories.jsx",
-    "../components/**/*.stories.tsx",
-    "../components/**/*.stories.mdx",
+    "../src/components/**/*.stories.ts",
+    "../src/components/**/*.stories.js",
+    "../src/components/**/*.stories.jsx",
+    "../src/components/**/*.stories.tsx",
+    "../src/components/**/*.stories.mdx",
     "*.ts",
-    "*.js"
+    "*.js",
+    "../../../.storybook/main.ts"
   ]
 }
